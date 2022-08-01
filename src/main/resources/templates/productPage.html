@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product details</title>
+</head>
+<body>
+
+<h1>Product details below</h1>
+<span th:if="${list == true}">
+    <table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Product Name </th>
+        <th>Unit Price </th>
+    </tr>
+    </thead>
+    <tr th:each="product:${products}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.unitPrice}"></td>
+    </tr>
+
+    </table>
+</span>
+<span th:unless="${product == null}">
+    <table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Product Name </th>
+        <th>Unit Price </th>
+    </tr>
+    </thead>
+    <tr >
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.unitPrice}"></td>
+    </tr>
+
+    </table>
+</span>
+
+</body>
+</html>

@@ -11,8 +11,8 @@
     <groupId>com.example</groupId>
     <artifactId>SakilaWeb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SakilaWeb</name>
-    <description>SakilaWeb</description>
+    <name>Northwind-app-server</name>
+    <description>Northwind-app-server</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -39,7 +39,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
