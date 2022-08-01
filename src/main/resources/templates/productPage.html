@@ -7,7 +7,7 @@
 <body>
 
 <h1>Product details below</h1>
-<span th:unless="${product == null}">
+<span th:if="${list == true}">
     <table>
     <thead>
     <tr>
@@ -24,7 +24,7 @@
 
     </table>
 </span>
-<span th:if="product!=null">
+<span th:unless="${product == null}">
     <table>
     <thead>
     <tr>

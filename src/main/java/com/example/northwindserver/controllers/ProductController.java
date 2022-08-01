@@ -18,15 +18,19 @@ public class ProductController {
 
     @GetMapping("/product/id/{id}")
     public String getProductByID(@PathVariable int id, Model model){
+        boolean first = false;
         Product result = repo.findById(id);
         model.addAttribute("product", result);
+        model.addAttribute("list",first);
         return "productPage";
     }
 
-    @GetMapping("/product/all/")
+    @GetMapping("/product/all")
     public String getAllProducts(Model model){
+        boolean first = true;
         List<Product> result = repo.findAll();
         model.addAttribute("products",result);
+        model.addAttribute("list",first);
         return "productPage";
     }
 }
