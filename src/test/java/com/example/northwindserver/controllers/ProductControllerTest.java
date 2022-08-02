@@ -26,8 +26,4 @@ class ProductControllerTest {
             throw new RuntimeException(e);
         }
     }
-
-
-
-
 }

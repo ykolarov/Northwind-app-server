@@ -8,39 +8,44 @@
     <title>Product details</title>
 </head>
 <body>
-<form th:action="@{/createProduct}" th:object="${product}" method="POST">
-    <label for="ProductID">Product ID</label>
-    <input type="text" id="ProductID" th:field="*{id}"/><br/>
 
-    <label for="SupplierID">Supplier ID</label>
-    <input type="range" id="SupplierID" th:field="*{supplierID}" min="1" max="29"><br/>
 
-    <label for="Category">Category</label>
-    <input type="range" id="Category" th:field="*{categoryID}" min="1" max="8"><br/>
 
-    <label for="ProductName">Product Name</label>
-    <input type="text" id="ProductName" th:field="*{productName}"/><br/>
+        <form th:action="@{/createProduct}" th:object="${product}" method="POST" >
 
-    <label for="QuantityPerUnit">Quantity per Unit </label>
-    <input type="text" id="QuantityPerUnit" th:field="*{quantityPerUnit}"/><br/>
+                <label for="ProductID">Product ID</label>
+                <input type="text" id="ProductID" th:field="*{id}"/><br/>
 
-    <label for="UnitPrice">Unit price</label>
-    <input type="text" id="UnitPrice" th:field="*{unitPrice}"/><br/>
+                <label for="SupplierID">Supplier ID</label>
+                <input type="range" id="SupplierID" th:field="*{supplierID}" min="1" max="29"><br/>
 
-    <label for="UnitsInStock">Units in Stock</label>
-    <input type="text" id="UnitsInStock" th:field="*{unitsInStock}"/><br/>
+                <label for="Category">Category</label>
+                <input type="range" id="Category" th:field="*{categoryID}" min="1" max="8"><br/>
 
-    <label for="UnitsOnOrder">Units On Order</label>
-    <input type="text" id="UnitsOnOrder" th:field="*{unitsOnOrder}"/><br/>
+                <label for="ProductName">Product Name</label>
+                <input type="text" id="ProductName" th:field="*{productName}"/><br/>
 
-    <label for="ReorderLevel">Reorder Level</label>
-    <input type="text" id="ReorderLevel" th:field="*{reorderLevel}"/><br/>
+                <label for="QuantityPerUnit">Quantity per Unit </label>
+                <input type="text" id="QuantityPerUnit" th:field="*{quantityPerUnit}"/><br/>
 
-    <label for="Discontinued">Discontinued</label>
-    <input type="text" id="Discontinued" th:field="*{discontinued}"/><br/>
+                <label for="UnitPrice">Unit price</label>
+                <input type="text" id="UnitPrice" th:field="*{unitPrice}"/><br/>
 
-    <button  type="submit"> Submit </button>
+                <label for="UnitsInStock">Units in Stock</label>
+                <input type="text" id="UnitsInStock" th:field="*{unitsInStock}"/><br/>
 
-</form>
+                <label for="UnitsOnOrder">Units On Order</label>
+                <input type="text" id="UnitsOnOrder" th:field="*{unitsOnOrder}"/><br/>
+
+                <label for="ReorderLevel">Reorder Level</label>
+                <input type="text" id="ReorderLevel" th:field="*{reorderLevel}"/><br/>
+
+                <label for="Discontinued">Discontinued</label>
+                <input type="text" id="Discontinued" th:field="*{discontinued}"/><br/>
+
+                <button  type="submit"> Submit </button>
+
+        </form>
+
 </body>
 </html>
