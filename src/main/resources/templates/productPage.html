@@ -10,19 +10,27 @@
 <body>
 <div class="container">
     <h1>Product details </h1>
+    <a class="btn btn-primary mb-4"  > Add new Product </a>
     <span th:if="${list == true}">
+
+
         <table class="table table-bordered table-striped table-dark">
         <thead>
         <tr>
             <th>ID</th>
             <th>Product Name </th>
             <th>Unit Price </th>
+            <th>Actions </th>
         </tr>
         </thead>
         <tr th:each="product:${products}">
             <td th:text="${product.id}"></td>
             <td th:text="${product.productName}"></td>
             <td th:text="${product.unitPrice}"></td>
+            <td>
+                <a class="btn btn-success mr-4 " >Update</a>
+                <a class="btn btn-danger "  >Delete</a>
+            </td>
         </tr>
 
         </table>
@@ -34,12 +42,17 @@
             <th>ID</th>
             <th>Product Name </th>
             <th>Unit Price </th>
+            <th>Actions </th>
         </tr>
         </thead>
         <tr>
             <td th:text="${product.id}"></td>
             <td th:text="${product.productName}"></td>
             <td th:text="${product.unitPrice}"></td>
+            <td>
+                <a th:href="" class="btn btn-success mr-4"  >Update</a>
+                <a th:href="" class="btn btn-danger"  >Delete</a>
+            </td>
         </tr>
 
     </table>
