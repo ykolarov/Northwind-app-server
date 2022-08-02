@@ -9,70 +9,103 @@
     <title>Product details</title>
 </head>
 <body>
-<div class="container">
-    <h1>Product details </h1>
-    <a th:href="@{/addNewProduct}" class="btn btn-primary mb-4"  > Add new Product </a>
-    <span th:if="${list == true}">
+<!--Nav Bar -->
+    <div class="container">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </div>
+<!--Heading & button -->
+    <div class="container">
+        <h1>Product details </h1>
+        <a th:href="@{/addNewProduct}" class="btn btn-primary mb-4"  > Add new Product </a>
+    </div>
+<!--Table -->
+    <div class="container">
+            <span th:if="${list == true}">
 
 
-        <table class="table table-bordered table-striped table-dark" id="product-table">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Product Name </th>
-            <th>Unit Price </th>
-            <th>Actions </th>
-        </tr>
-        </thead>
-        <tr th:each="product:${products}">
-            <td th:text="${product.id}"></td>
-            <td th:text="${product.productName}"></td>
-            <td th:text="${product.unitPrice}"></td>
-            <td>
-                <a th:href="@{'/product/edit/' + ${product.id}}" class="btn btn-success mr-4 " >Update</a>
-                <!--<a th:href="@{'/product/edit/' + ${product.id}}">Update</a>-->
-                <a th:href="@{'/product/delete/' + ${product.id}}" class="btn btn-danger "  >Delete</a>
-            </td>
-        </tr>
+                <table class="table table-bordered table-striped table-dark" id="product-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name </th>
+                    <th>Unit Price </th>
+                    <th>Actions </th>
+                </tr>
+                </thead>
+                <tr th:each="product:${products}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.productName}"></td>
+                    <td th:text="${product.unitPrice}"></td>
+                    <td>
+                        <a th:href="@{'/product/edit/' + ${product.id}}" class="btn btn-success mr-4 " >Update</a>
+                        <!--<a th:href="@{'/product/edit/' + ${product.id}}">Update</a>-->
+                        <a th:href="@{'/product/delete/' + ${product.id}}" class="btn btn-danger "  >Delete</a>
+                    </td>
+                </tr>
 
-        </table>
-    </span>
-    <span th:unless="${product == null}">
-    <table class="table table-bordered table-striped table-dark">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Product Name </th>
-            <th>Unit Price </th>
-            <th>Actions </th>
-        </tr>
-        </thead>
-        <tr>
-            <td th:text="${product.id}"></td>
-            <td th:text="${product.productName}"></td>
-            <td th:text="${product.unitPrice}"></td>
-            <td>
-                <a class="btn btn-success mr-4"  >Update</a>
-                <a class="btn btn-danger"  >Delete</a>
-            </td>
-        </tr>
+                </table>
+            </span>
+            <span th:unless="${product == null}">
+            <table class="table table-bordered table-striped table-dark">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name </th>
+                    <th>Unit Price </th>
+                    <th>Actions </th>
+                </tr>
+                </thead>
+                <tr>
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.productName}"></td>
+                    <td th:text="${product.unitPrice}"></td>
+                    <td>
+                        <a class="btn btn-success mr-4"  >Update</a>
+                        <a class="btn btn-danger"  >Delete</a>
+                    </td>
+                </tr>
 
-    </table>
-    </span>
+            </table>
+            </span>
 
-</div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $("#product-table").DataTable({
-                    'aoColumnDefs': [{
-                        'bSortable': false,
-                        'aTargets': [-1]
-                    }]
+        </div>
+<!--footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>Contact</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consectetur sunt unde excepturi amet, iure, enim vel repellat cupiditate natus a fuga nemo cumque, nihil odio deleniti culpa minima dolore. Laborum aliquid error necessitatibus a perferendis in eum delectus ullam.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $("#product-table").DataTable({
+                        'aoColumnDefs': [{
+                            'bSortable': false,
+                            'aTargets': [-1]
+                        }]
+                    })
                 })
-            })
 
-        </script>
+            </script>
 </body>
 </html>
