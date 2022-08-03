@@ -29,12 +29,12 @@
 <hr>
 <!--Heading & button -->
     <div class="container">
-        <h1>Product details </h1>
-        <a th:href="@{/addNewProduct}" class="btn btn-primary mb-4"  > Add new Product </a>
+        <h1>Basket details </h1>
+
     </div>
 <!--Table -->
     <div class="container">
-            <span th:if="${list == true}">
+
 
 
                 <table class="table table-bordered table-striped table-dark" id="product-table">
@@ -46,44 +46,21 @@
                     <th>Actions </th>
                 </tr>
                 </thead>
-                <tr th:each="product:${products}">
+                <tr th:each="product:${basket}">
                     <td th:text="${product.id}"></td>
                     <td th:text="${product.productName}"></td>
                     <td th:text="${product.unitPrice}"></td>
                     <td>
-                        <a th:href="@{'/product/edit/' + ${product.id}}" class="btn btn-success mr-4 " >Update</a>
-                        <!--<a th:href="@{'/product/edit/' + ${product.id}}">Update</a>-->
-                        <a th:href="@{'/product/delete/' + ${product.id}}" class="btn btn-danger mr-4"  >Delete</a>
 
-                        <a th:href="@{'/product/add/' + ${product.id}}" class="btn btn-info mr-4 " >Add to basket</a>
+                        <!--delete to delete from basket, below need to be modify -->
+                        <a th:href="@{'/product/delete/' + ${product.id}}" class="btn btn-danger mr-4"  >Remove from Basket</a>
+
+
 
                     </td>
                 </tr>
 
                 </table>
-            </span>
-            <span th:unless="${product == null}">
-            <table class="table table-bordered table-striped table-dark">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Product Name </th>
-                    <th>Unit Price </th>
-                    <th>Actions </th>
-                </tr>
-                </thead>
-                <tr>
-                    <td th:text="${product.id}"></td>
-                    <td th:text="${product.productName}"></td>
-                    <td th:text="${product.unitPrice}"></td>
-                    <td>
-                        <a class="btn btn-success mr-4"  >Update</a>
-                        <a class="btn btn-danger"  >Delete</a>
-                    </td>
-                </tr>
-
-            </table>
-            </span>
 
         </div>
 <hr>

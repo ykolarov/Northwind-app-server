@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Product details</title>
+</head>
+<body>
+
+
+
+        <form th:action="@{/createProduct}" th:object="${product}" method="POST" >
+
+                <label for="ProductID">Product ID</label>
+                <input type="text" id="ProductID" th:field="*{id}"/><br/>
+
+                <label for="SupplierID">Supplier ID</label>
+                <input type="range" id="SupplierID" th:field="*{supplierID}" min="1" max="29"><br/>
+
+                <label for="Category">Category</label>
+                <input type="range" id="Category" th:field="*{categoryID}" min="1" max="8"><br/>
+
+                <label for="ProductName">Product Name</label>
+                <input type="text" id="ProductName" th:field="*{productName}"/><br/>
+
+                <label for="QuantityPerUnit">Quantity per Unit </label>
+                <input type="text" id="QuantityPerUnit" th:field="*{quantityPerUnit}"/><br/>
+
+                <label for="UnitPrice">Unit price</label>
+                <input type="text" id="UnitPrice" th:field="*{unitPrice}"/><br/>
+
+                <label for="UnitsInStock">Units in Stock</label>
+                <input type="text" id="UnitsInStock" th:field="*{unitsInStock}"/><br/>
+
+                <label for="UnitsOnOrder">Units On Order</label>
+                <input type="text" id="UnitsOnOrder" th:field="*{unitsOnOrder}"/><br/>
+
+                <label for="ReorderLevel">Reorder Level</label>
+                <input type="text" id="ReorderLevel" th:field="*{reorderLevel}"/><br/>
+
+                <label for="Discontinued">Discontinued</label>
+                <input type="text" id="Discontinued" th:field="*{discontinued}"/><br/>
+
+                <button  type="submit"> Submit </button>
+
+        </form>
+
+</body>
+</html>
