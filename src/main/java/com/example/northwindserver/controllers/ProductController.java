@@ -72,4 +72,9 @@ public class ProductController {
         repo.deleteById(id);
         return "redirect:/product/all";
     }
+
+    @PostMapping("/product/submitOrder")
+    public String submitOrder(Model model){
+
+    }
 }

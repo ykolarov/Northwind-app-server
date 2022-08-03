@@ -61,8 +61,9 @@
                 </tr>
 
                 </table>
-
+                <input type="submit" value="Complete Order" th:action="@{/product/submitOrder}" th:object="${basket}" th:method="POST">
         </div>
+
 <hr>
 <!--footer -->
     <footer>
