@@ -7,9 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@SessionAttributes("basket")
 public class ProductController {
 
     @Autowired
@@ -22,6 +24,18 @@ public class ProductController {
         model.addAttribute("product", result);
         model.addAttribute("list",first);
         return "productPage";
+    }
+
+    @GetMapping("/product/add/{id}")
+    public String addToBasket(@PathVariable int id, Model model ,@ModelAttribute("basket") List<Product> basket){
+        Product product = repo.getReferenceById(id);
+        basket.add(product);
+        model.addAttribute("basket",basket);
+        return "basketPage";
+    }
+    @ModelAttribute("basket")
+    public List<Product> basket(){
+        return new ArrayList<>();
     }
 
     @GetMapping("/product/all")
