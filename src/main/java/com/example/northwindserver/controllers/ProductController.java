@@ -1,5 +1,6 @@
 package com.example.northwindserver.controllers;
 
+import com.example.northwindserver.entities.Order;
 import com.example.northwindserver.entities.Product;
 import com.example.northwindserver.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,8 @@ public class ProductController {
     @GetMapping("/addNewProduct")
     public String addNewProduct(Model model){
        Product product = new Product();
+       List<Product> result = new ArrayList<>();
+
        model.addAttribute("product",product);
         return "newProductForm";
     }
@@ -75,6 +78,8 @@ public class ProductController {
 
     @PostMapping("/product/submitOrder")
     public String submitOrder(Model model){
-
+        Order order = new Order();
+        model.addAttribute("basket",order);
+        return "SubmitOrder";
     }
 }

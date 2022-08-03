@@ -1,4 +1,8 @@
-package com.example.northwindserver;
+package com.example.northwindserver.entities;
+
+import com.example.northwindserver.entities.Customer;
+import com.example.northwindserver.entities.Employee;
+import com.example.northwindserver.entities.Shipper;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

@@ -1,4 +1,4 @@
-package com.example.northwindserver;
+package com.example.northwindserver.entities;
 
 import javax.persistence.*;
 import java.time.Instant;
