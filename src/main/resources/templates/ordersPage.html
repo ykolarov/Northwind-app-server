@@ -13,13 +13,13 @@
     <div class="container">
         <ul class="nav">
             <li class="nav-item">
+                <a class="nav-link active" th:href="@{/product/all}" >Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" th:href="@{/orders/all/}">Orders</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link active" th:href="@{/basket/show/}">Basket</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
@@ -48,11 +48,11 @@
                     <td th:text="${order.shipName}"></td>
                     <td th:text="${order.shipCountry}"></td>
                     <td>
-                        <a th:href="@{'/product/edit/' + ${order.id}}" class="btn btn-success mr-4 " >Update</a>
+                        <a th:href="@{'/order/edit/' + ${order.id}}" class="btn btn-success mr-4 " >Update</a>
 
-                        <a th:href="@{'/product/delete/' + ${order.id}}" class="btn btn-danger mr-4"  >Delete</a>
+                        <a th:href="@{'/order/delete/' + ${order.id}}" class="btn btn-danger mr-4"  >Delete</a>
                         <!--To be implemented -->
-                        <a th:href="@{'/product/add/' + ${order.id}}" class="btn btn-info mr-4 " >See More Details</a>
+                     <!--   <a th:href="@{'/order/details/' + ${order.id}}" class="btn btn-info mr-4 " >See More Details</a>-->
 
                     </td>
                 </tr>

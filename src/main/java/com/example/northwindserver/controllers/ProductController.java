@@ -42,12 +42,8 @@ public class ProductController {
     }
 
     @GetMapping("/basket/delete/{id}")
-    public String deleteFromBasket(@PathVariable int id, Model model ,@ModelAttribute("basket") List<Product> basket){
-
-        System.out.println("basket size " + basket.size() + " product in basket " + basket);
+    public String deleteFromBasket(@PathVariable int id,@ModelAttribute("basket") List<Product> basket){
         basket.remove(id);
-        System.out.println("basket size " + basket.size() + " product in basket " + basket);
-        //model.addAttribute("basket",basket);
         return "redirect:/basket/show/";
     }
     @ModelAttribute("basket")
