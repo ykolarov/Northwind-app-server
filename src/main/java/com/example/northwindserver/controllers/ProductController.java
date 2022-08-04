@@ -27,7 +27,19 @@ public class ProductController {
         return "productPage";
     }
 
-    @GetMapping("/product/add/{id}")
+    /* START OF SECURITY ---- */
+    @GetMapping("/login")
+    public String loginForm(){
+        return "login";
+    }
+
+    @GetMapping("accessDenied")
+    public String accessDenied(){
+        return "accessDenied";
+    }
+    /* END OF SECURITY ---- */
+
+    @GetMapping("/basket/add/{id}")
     public String addToBasket(@PathVariable int id, Model model ,@ModelAttribute("basket") List<Product> basket){
         Product product = repo.getReferenceById(id);
         basket.add(product);
@@ -66,7 +78,7 @@ public class ProductController {
         return "redirect:/product/all";
     }
 
-    @GetMapping("/addNewProduct")
+    @GetMapping("/product/add")
     public String addNewProduct(Model model){
        Product product = new Product();
        List<Product> result = new ArrayList<>();
