@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.12.1/datatables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+<body>
+<!--Nav Bar -->
+    <div class="container">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" th:href="@{/basket/show/}">Basket</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </div>
+<hr>
+<!--Heading & button -->
+    <div class="container">
+        <h1>Orders </h1>
+    </div>
+<!--Table -->
+    <div class="container">
+
+                <table class="table table-bordered table-striped table-dark" id="order-table">
+                <thead>
+                <tr>
+                    <th>OrderID</th>
+                    <th>Ship Name </th>
+                    <th>Ship Country</th>
+                    <th>Actions </th>
+                </tr>
+                </thead>
+                <tr th:each="order:${orders}">
+                    <td th:text="${order.id}"></td>
+                    <td th:text="${order.shipName}"></td>
+                    <td th:text="${order.shipCountry}"></td>
+                    <td>
+                        <a th:href="@{'/product/edit/' + ${order.id}}" class="btn btn-success mr-4 " >Update</a>
+
+                        <a th:href="@{'/product/delete/' + ${order.id}}" class="btn btn-danger mr-4"  >Delete</a>
+                        <!--To be implemented -->
+                        <a th:href="@{'/product/add/' + ${order.id}}" class="btn btn-info mr-4 " >See More Details</a>
+
+                    </td>
+                </tr>
+
+                </table>
+
+
+        </div>
+<hr>
+<!--footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>Contact</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consectetur sunt unde excepturi amet, iure, enim vel repellat cupiditate natus a fuga nemo cumque, nihil odio deleniti culpa minima dolore. Laborum aliquid error necessitatibus a perferendis in eum delectus ullam.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#order-table").DataTable({
+                    'aoColumnDefs': [{
+                        'bSortable': false,
+                        'aTargets': [-1]
+                    }]
+                })
+            })
+
+
+
+        </script>
+
+</body>
+</html>
