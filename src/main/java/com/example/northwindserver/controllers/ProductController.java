@@ -27,6 +27,18 @@ public class ProductController {
         return "productPage";
     }
 
+    /* START OF SECURITY ---- */
+    @GetMapping("/login")
+    public String loginForm(){
+        return "login";
+    }
+
+    @GetMapping("accessDenied")
+    public String accessDenied(){
+        return "accessDenied";
+    }
+    /* END OF SECURITY ---- */
+
     @GetMapping("/product/add/{id}")
     public String addToBasket(@PathVariable int id, Model model ,@ModelAttribute("basket") List<Product> basket){
         Product product = repo.getReferenceById(id);
