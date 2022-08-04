@@ -31,12 +31,12 @@ public class ProductSecurityConfigs extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/product/delete/*").hasAnyAuthority("ADMIN")
-                .antMatchers("/addNewProduct").hasAnyAuthority("ADMIN")
+                .antMatchers("/product/add").hasAnyAuthority("ADMIN")
                 .antMatchers("/product/edit/*").hasAnyAuthority("ADMIN")
 
                 .antMatchers("/basket/delete/*").hasAnyAuthority("USER")
                 .antMatchers("/basket/show/").hasAnyAuthority("USER")
-                .antMatchers("/product/add/*").hasAnyAuthority("USER")
+                .antMatchers("/basket/add/*").hasAnyAuthority("USER")
 
                 .antMatchers("/product/all").permitAll()
                 .antMatchers("/welcome*").permitAll()

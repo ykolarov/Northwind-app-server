@@ -39,7 +39,7 @@ public class ProductController {
     }
     /* END OF SECURITY ---- */
 
-    @GetMapping("/product/add/{id}")
+    @GetMapping("/basket/add/{id}")
     public String addToBasket(@PathVariable int id, Model model ,@ModelAttribute("basket") List<Product> basket){
         Product product = repo.getReferenceById(id);
         basket.add(product);
@@ -82,7 +82,7 @@ public class ProductController {
         return "redirect:/product/all";
     }
 
-    @GetMapping("/addNewProduct")
+    @GetMapping("/product/add")
     public String addNewProduct(Model model){
        Product product = new Product();
        List<Product> result = new ArrayList<>();

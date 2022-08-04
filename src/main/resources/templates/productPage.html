@@ -30,7 +30,7 @@
 <!--Heading & button -->
     <div class="container">
         <h1>Product details </h1>
-        <a th:href="@{/addNewProduct}" class="btn btn-primary mb-4"  > Add new Product </a>
+        <a th:href="@{/product/add}" class="btn btn-primary mb-4"  > Add new Product </a>
     </div>
 <!--Table -->
     <div class="container">
@@ -55,7 +55,7 @@
                         <!--<a th:href="@{'/product/edit/' + ${product.id}}">Update</a>-->
                         <a th:href="@{'/product/delete/' + ${product.id}}" class="btn btn-danger mr-4"  >Delete</a>
 
-                        <a th:href="@{'/product/add/' + ${product.id}}" class="btn btn-info mr-4 " >Add to basket</a>
+                        <a th:href="@{'/basket/add/' + ${product.id}}" class="btn btn-info mr-4 " >Add to basket</a>
 
                     </td>
                 </tr>
