@@ -34,6 +34,22 @@ public class ProductController {
         model.addAttribute("basket",basket);
         return "basketPage";
     }
+
+    @GetMapping("/basket/show/")
+    public String showBasket(@ModelAttribute("basket") List<Product> basket, Model model){
+        model.addAttribute("basket",basket);
+        return "basketPage";
+    }
+
+    @GetMapping("/basket/delete/{id}")
+    public String deleteFromBasket(@PathVariable int id, Model model ,@ModelAttribute("basket") List<Product> basket){
+
+        System.out.println("basket size " + basket.size() + " product in basket " + basket);
+        basket.remove(id);
+        System.out.println("basket size " + basket.size() + " product in basket " + basket);
+        //model.addAttribute("basket",basket);
+        return "redirect:/basket/show/";
+    }
     @ModelAttribute("basket")
     public List<Product> basket(){
         return new ArrayList<>();

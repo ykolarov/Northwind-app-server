@@ -13,7 +13,7 @@
     <div class="container">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
+                <a class="nav-link active" th:href="@{/product/all}" >Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -40,22 +40,22 @@
                 <table class="table table-bordered table-striped table-dark" id="product-table">
                 <thead>
                 <tr>
+
                     <th>ID</th>
                     <th>Product Name </th>
                     <th>Unit Price </th>
                     <th>Actions </th>
                 </tr>
                 </thead>
-                <tr th:each="product:${basket}">
+                <tr th:each="product,iterStat:${basket}">
+                    <td th:text="${iterStat.index}"></td>
                     <td th:text="${product.id}"></td>
                     <td th:text="${product.productName}"></td>
                     <td th:text="${product.unitPrice}"></td>
                     <td>
 
                         <!--delete to delete from basket, below need to be modify -->
-                        <a th:href="@{'/product/delete/' + ${product.id}}" class="btn btn-danger mr-4"  >Remove from Basket</a>
-
-
+                        <a th:href="@{'/basket/delete/' + ${iterStat.index}}" class="btn btn-danger mr-4"  >Remove from Basket</a>
 
                     </td>
                 </tr>
