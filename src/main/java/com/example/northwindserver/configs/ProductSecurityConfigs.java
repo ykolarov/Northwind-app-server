@@ -45,6 +45,12 @@ public class ProductSecurityConfigs extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .defaultSuccessUrl("/welcome", true)
                 .permitAll()
+                .and().logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/welcome")
+                .invalidateHttpSession(true)
+                .deleteCookies()
                 .and().exceptionHandling().accessDeniedPage("/accessDenied");
     }
+
 }
