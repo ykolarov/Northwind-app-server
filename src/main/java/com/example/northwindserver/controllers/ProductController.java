@@ -33,7 +33,7 @@ public class ProductController {
         return "login";
     }
 
-    @GetMapping("accessDenied")
+    @GetMapping("/accessDenied")
     public String accessDenied(){
         return "accessDenied";
     }
