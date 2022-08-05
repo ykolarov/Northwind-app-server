@@ -9,53 +9,54 @@
 </head>
 <body>
 
-<form th:action="@{/updateOrder}" th:object="${orderToEdit}" method="POST">
-    <label for="OrderID">Order ID</label>
-    <input type="text" id="OrderID" name="OrderID" th:field="${orderToEdit.id}"><br/>
+    <div class="container">
+        <form th:action="@{/updateOrder}" th:object="${orderToEdit}" method="POST">
+            <label for="OrderID">Order ID</label>
+            <input type="text" id="OrderID" name="OrderID" th:field="${orderToEdit.id}"><br/>
 
-<!--
-    <label for="CustomerID">Customer ID</label>
-    <input type="text" id="CustomerID" name="CustomerID" th:field="${orderToEdit.getCustomerID().id}"><br/>
+        <!--
+            <label for="CustomerID">Customer ID</label>
+            <input type="text" id="CustomerID" name="CustomerID" th:field="${orderToEdit.getCustomerID().id}"><br/>
 
-    <label for="EmployeeID">Employee ID</label>
-    <input type="text" id="EmployeeID" name="EmployeeID" th:field="${orderToEdit.getEmployeeID().id}"><br/>
--->
+            <label for="EmployeeID">Employee ID</label>
+            <input type="text" id="EmployeeID" name="EmployeeID" th:field="${orderToEdit.getEmployeeID().id}"><br/>
+        -->
 
-    <label for="orderDate">Order date</label>
-    <input type="text" id="orderDate" name="orderDate" th:field="${orderToEdit.orderDate}"><br/>
+            <label for="orderDate">Order date</label>
+            <input type="text" id="orderDate" name="orderDate" th:field="${orderToEdit.orderDate}"><br/>
 
-    <label for="requiredDate">Required Date</label>
-    <input type="text" id="requiredDate" name="requiredDate" th:field="${orderToEdit.requiredDate}"><br/>
+            <label for="requiredDate">Required Date</label>
+            <input type="text" id="requiredDate" name="requiredDate" th:field="${orderToEdit.requiredDate}"><br/>
 
-    <label for="shippedDate">Shipped Date</label>
-    <input type="text" id="shippedDate" name="shippedDate" th:field="${orderToEdit.shippedDate}"><br/>
+            <label for="shippedDate">Shipped Date</label>
+            <input type="text" id="shippedDate" name="shippedDate" th:field="${orderToEdit.shippedDate}"><br/>
 
-   <!-- <label for="shippedVia">Shipped Via</label>
-    <input type="text" id="shippedVia" name="shippedVia" th:field="${orderToEdit.shipVia}"><br/>-->
+           <!-- <label for="shippedVia">Shipped Via</label>
+            <input type="text" id="shippedVia" name="shippedVia" th:field="${orderToEdit.shipVia}"><br/>-->
 
-    <label for="freight">Freight</label>
-    <input type="text" id="freight" name="freight" th:field="${orderToEdit.freight}"><br/>
+            <label for="freight">Freight</label>
+            <input type="text" id="freight" name="freight" th:field="${orderToEdit.freight}"><br/>
 
-    <label for="shipName">Ship Name</label>
-    <input type="text" id="shipName" name="shipName" th:field="${orderToEdit.shipName}"><br/>
+            <label for="shipName">Ship Name</label>
+            <input type="text" id="shipName" name="shipName" th:field="${orderToEdit.shipName}"><br/>
 
-    <label for="shipAddress">Ship Address</label>
-    <input type="text" id="shipAddress" name="shipAddress" th:field="${orderToEdit.shipAddress}"><br/>
+            <label for="shipAddress">Ship Address</label>
+            <input type="text" id="shipAddress" name="shipAddress" th:field="${orderToEdit.shipAddress}"><br/>
 
-    <label for="shipCity">Ship City</label>
-    <input type="text" id="shipCity" name="shipCity" th:field="${orderToEdit.shipCity}"><br/>
+            <label for="shipCity">Ship City</label>
+            <input type="text" id="shipCity" name="shipCity" th:field="${orderToEdit.shipCity}"><br/>
 
-    <label for="shipRegion">Ship Region</label>
-    <input type="text" id="shipRegion" name="shipRegion" th:field="${orderToEdit.shipRegion}"><br/>
+            <label for="shipRegion">Ship Region</label>
+            <input type="text" id="shipRegion" name="shipRegion" th:field="${orderToEdit.shipRegion}"><br/>
 
-    <label for="shipPostalCode">Ship Postal Code</label>
-    <input type="text" id="shipPostalCode" name="shipPostalCode" th:field="${orderToEdit.shipPostalCode}"><br/>
+            <label for="shipPostalCode">Ship Postal Code</label>
+            <input type="text" id="shipPostalCode" name="shipPostalCode" th:field="${orderToEdit.shipPostalCode}"><br/>
 
-    <label for="shipCountry">Ship Country</label>
-    <input type="text" id="shipCountry" name="shipCountry" th:field="${orderToEdit.shipCountry}"><br/>
+            <label for="shipCountry">Ship Country</label>
+            <input type="text" id="shipCountry" name="shipCountry" th:field="${orderToEdit.shipCountry}"><br/>
 
-    <input type="submit" value="Submit Update">
-</form>
-
+            <input type="submit" value="Submit Update">
+        </form>
+    </div>
 </body>
 </html>

@@ -8,8 +8,8 @@
     <title>Product details</title>
 </head>
 <body>
-
-    <form th:action="@{/createCustomer}" th:object="${customer}" method="POST" >
+<div class="container mt-10">
+    <form class="table-bordered"  th:action="@{/createCustomer}" th:object="${customer}" method="POST" >
 
         <label for="CustomerID">Customer ID</label>
         <input type="text" id="CustomerID" th:field="*{id}"/><br/>
@@ -47,6 +47,6 @@
         <button  type="submit"> Submit </button>
 
     </form>
-
+</div>
 </body>
 </html>
