@@ -43,8 +43,9 @@
 3. Retrieving individual record from database by ID for products.
 ## Usage
 - Available Credentials:
-  - User: Yanaki with password 1234
-  - Admin: Neil with password 123456
+  - User: Yanaki with password 1234 - Authorized to add/remove items from/to basket and view all items
+  - Admin: Neil with password 123456 - Authorized to create, update, delete entities and view them, but not interact with basket
+  - non logged in user - Authorized to view all items
 - By going to the webpage localhost://8080/welcome, you are taken to the first page:
 ![img.png](img.png)
 
