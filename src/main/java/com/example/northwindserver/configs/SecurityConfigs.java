@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 @EnableWebSecurity
 @Configuration
-public class ProductSecurityConfigs extends WebSecurityConfigurerAdapter {
+public class SecurityConfigs extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
@@ -30,16 +30,25 @@ public class ProductSecurityConfigs extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                // ONLY ADMINS HAVE ACCESS
                 .antMatchers("/product/delete/*").hasAnyAuthority("ADMIN")
                 .antMatchers("/product/add").hasAnyAuthority("ADMIN")
                 .antMatchers("/product/edit/*").hasAnyAuthority("ADMIN")
-
+                .antMatchers("/customer/delete/*").hasAnyAuthority("ADMIN")
+                .antMatchers("/customer/add").hasAnyAuthority("ADMIN")
+                .antMatchers("/customer/edit/*").hasAnyAuthority("ADMIN")
+                .antMatchers("/order/delete/*").hasAnyAuthority("ADMIN")
+                .antMatchers("/updateOrder").hasAnyAuthority("ADMIN")
+                .antMatchers("/order/edit/*").hasAnyAuthority("ADMIN")
+                // ONLY USERS HAVE ACCESS
                 .antMatchers("/basket/delete/*").hasAnyAuthority("USER")
                 .antMatchers("/basket/show/").hasAnyAuthority("USER")
                 .antMatchers("/basket/add/*").hasAnyAuthority("USER")
-
+                // EVERYONE HAS ACCESS
                 .antMatchers("/product/all").permitAll()
                 .antMatchers("/welcome*").permitAll()
+                .antMatchers("/orders/all").permitAll()
+                .antMatchers("/customer/all").permitAll()
                 .anyRequest().authenticated()
                 .and().formLogin()
                 .loginPage("/login")
