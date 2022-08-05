@@ -120,4 +120,11 @@ public class Product {
         this.discontinued = discontinued;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
+                '}';
+    }
 }
