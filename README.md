@@ -22,16 +22,12 @@
 
 ## Technologies Used
 
-- [SOLID](https://en.wikipedia.org/wiki/SOLID)
-- [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming)
 - [MySQL](https://en.wikipedia.org/wiki/MySQL)
 - [MAVEN](https://en.wikipedia.org/wiki/Apache_Maven)
 - [GIT](https://en.wikipedia.org/wiki/Git)/[GITHUB](https://en.wikipedia.org/wiki/GitHub)
-- [Collections](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/Collections.html)
 - [jUnit](https://en.wikipedia.org/wiki/JUnit)
 - [Log4j](https://en.wikipedia.org/wiki/Log4j)
 - [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity)
-- [Scanner](https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/Scanner.html)
 - [Hibernate](https://en.wikipedia.org/wiki/Hibernate_(framework))
 - [SpringBoot](https://spring.io/projects/spring-boot)
 - [Spring Security](https://spring.io/projects/spring-security)
@@ -40,12 +36,15 @@
 - [HTML](https://en.wikipedia.org/wiki/HTML)
 - [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 - [JQuery](https://jquery.com/)
-- [Sessions](https://spring.io/projects/spring-session)
+- [Spring Sessions](https://spring.io/projects/spring-session)
 ## Features
 1. Users for each level of Security
 2. Options to create, delete and buy products.
 3. Retrieving individual record from database by ID for products.
 ## Usage
+- Available Credentials:
+  - User: Yanaki with password 1234
+  - Admin: Neil with password 123456
 - By going to the webpage localhost://8080/welcome, you are taken to the first page:
 ![img.png](img.png)
 
@@ -58,7 +57,7 @@
 
 ## Tests
 ### Basket Controller Tests:
-```
+```java
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class BasketPageTest {
 
@@ -93,7 +92,7 @@ public class BasketPageTest {
 }
 ```
 ### Customer Page Tests:
-```
+``` java
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class CustomerPageTest {
 
@@ -129,7 +128,7 @@ public class CustomerPageTest {
 }
 ```
 ### Home Page Tests:
-```
+```java
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class HomePageTest {
 
@@ -164,7 +163,7 @@ public class HomePageTest {
 }
 ```
 ### Login Page Tests:
-```
+```java
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class LoginPageTest {
 
@@ -200,7 +199,7 @@ public class LoginPageTest {
 }
 ```
 ### Order Page Tests:
-```
+```java
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class OrderPageTest {
 
@@ -236,7 +235,7 @@ public class OrderPageTest {
 }
 ```
 ### Product Page Tests:
-```
+```java
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ProductPageTest {
 
