@@ -41,15 +41,14 @@
                 <thead>
                 <tr>
 
-                    <th>ID</th>
+
                     <th>Product Name </th>
                     <th>Unit Price </th>
                     <th>Actions </th>
                 </tr>
                 </thead>
                 <tr th:each="product,iterStat:${basket}">
-                    <td th:text="${iterStat.index}"></td>
-                    <td th:text="${product.id}"></td>
+
                     <td th:text="${product.productName}"></td>
                     <td th:text="${product.unitPrice}"></td>
                     <td>
