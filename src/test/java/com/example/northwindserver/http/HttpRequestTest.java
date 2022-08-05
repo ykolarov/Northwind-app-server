@@ -18,6 +18,44 @@ public class HttpRequestTest {
     public void homepageShouldReturnNorthwindMessage() throws Exception {
         assertThat(this.restTemplate.
                 getForObject("http://localhost:" + 8080 + "/welcome", String.class))
-                .contains("Northwind");
+                .contains("Northwind")
+                .doesNotContain("Lorem ipsum dolor sit amet");
+    }
+    @Test
+    public void loginPageShouldHaveUsernamePasswordStrings() throws Exception {
+        assertThat(this.restTemplate.
+                getForObject("http://localhost:" + 8080 + "/login", String.class))
+                .contains("Username")
+                .contains("Password")
+                .doesNotContain("Products")
+                .doesNotContain("Lorem ipsum dolor sit amet");
+    }
+    @Test
+    public void allProductPageShouldHaveProductDetails() throws Exception {
+        assertThat(this.restTemplate.
+                getForObject("http://localhost:" + 8080 + "/product/all", String.class))
+                .contains("Product Details")
+                .contains("Search")
+                .doesNotContain("Lorem ipsum dolor sit amet");
+    }
+
+    @Test
+    public void basketPageDoesNotHaveLoremMessage() throws Exception {
+        assertThat(this.restTemplate.
+                getForObject("http://localhost:" + 8080 + "/basket/show", String.class))
+                .doesNotContain("Lorem ipsum dolor sit amet");
+    }
+
+    @Test
+    public void orderPageDoesNotHaveLoremMessage() throws Exception {
+        assertThat(this.restTemplate.
+                getForObject("http://localhost:" + 8080 + "/orders/all", String.class))
+                .doesNotContain("Lorem ipsum dolor sit amet");
+    }
+    @Test
+    public void customerPageDoesNotHaveLoremMessage() throws Exception {
+        assertThat(this.restTemplate.
+                getForObject("http://localhost:" + 8080 + "/customer/all", String.class))
+                .doesNotContain("Lorem ipsum dolor sit amet");
     }
 }
