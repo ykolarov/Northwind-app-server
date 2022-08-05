@@ -40,22 +40,29 @@ public class HttpRequestTest {
     }
 
     @Test
-    public void basketPageDoesNotHaveLoremMessage() throws Exception {
+    public void basketPageHasAppropriateContents() throws Exception {
         assertThat(this.restTemplate.
                 getForObject("http://localhost:" + 8080 + "/basket/show", String.class))
+                .contains("Basket Details")
+                .contains("Search")
+                .contains("Next")
+                .contains("Previous")
+                .contains("Complete Order")
                 .doesNotContain("Lorem ipsum dolor sit amet");
     }
 
     @Test
-    public void orderPageDoesNotHaveLoremMessage() throws Exception {
+    public void orderPageHasAppropriateContents() throws Exception {
         assertThat(this.restTemplate.
                 getForObject("http://localhost:" + 8080 + "/orders/all", String.class))
+                .contains("Order Details")
                 .doesNotContain("Lorem ipsum dolor sit amet");
     }
     @Test
-    public void customerPageDoesNotHaveLoremMessage() throws Exception {
+    public void customerPageHasAppropriateContents() throws Exception {
         assertThat(this.restTemplate.
                 getForObject("http://localhost:" + 8080 + "/customer/all", String.class))
+                .contains("Customer Details")
                 .doesNotContain("Lorem ipsum dolor sit amet");
     }
 }
