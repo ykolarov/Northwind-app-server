@@ -94,16 +94,37 @@
         </div>
 <hr>
 <!--footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h4>Contact</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus consectetur sunt unde excepturi amet, iure, enim vel repellat cupiditate natus a fuga nemo cumque, nihil odio deleniti culpa minima dolore. Laborum aliquid error necessitatibus a perferendis in eum delectus ullam.</p>
-                </div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>Contact</h4>
+                <p>Facebook:xxxxx Twitter:xxxxxx amazon:xxxxx Contact-Email: nohelpHere@totallynotafakeemail.co.uk Contact-Phone Number: 02781934752</p>
+                <h4>Links</h4>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/product/all}" >Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/orders/all/}">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/basket/show/}">Basket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/customer/all/}">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/logout}">Logout</a>
+                    </li>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="log out"/>
+                    </form>
+                </ul>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
