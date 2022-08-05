@@ -10,25 +10,26 @@
 </head>
 <body>
 <!--Nav Bar -->
-    <div class="container">
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link active" th:href="@{/product/all}" >Products</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" th:href="@{/orders/all/}">Orders</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" th:href="@{/basket/show/}">Basket</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" th:href="@{/customer/all/}">Customers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" th:href="@{/logout}">Logout</a>
-            </li>
-        </ul>
-    </div>
+<div class="container">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" th:href="@{/product/all}" >Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" th:href="@{/orders/all/}">Orders</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" th:href="@{/basket/show/}">Basket</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" th:href="@{/customer/all/}">Customers</a>
+        </li>
+
+        <form class="nav-link active" th:action="@{/logout}" method="post">
+            <input class="nav-link active" type="submit" value="log out"/>
+        </form>
+    </ul>
+</div>
 <hr>
 <!--Heading & button -->
 <div class="container">
