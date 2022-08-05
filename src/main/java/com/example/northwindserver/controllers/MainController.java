@@ -15,6 +15,18 @@ public class MainController {
     //    return "redirect:/login";
     //}
 
+    /* START OF SECURITY ---- */
+    @GetMapping("/login")
+    public String loginForm(){
+        return "login";
+    }
+
+    @GetMapping("/accessDenied")
+    public String accessDenied(){
+        return "accessDenied";
+    }
+    /* END OF SECURITY ---- */
+
 }
 
 
