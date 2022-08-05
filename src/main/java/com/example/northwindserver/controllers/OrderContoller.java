@@ -2,6 +2,7 @@ package com.example.northwindserver.controllers;
 
 import com.example.northwindserver.entities.Order;
 import com.example.northwindserver.entities.Product;
+import com.example.northwindserver.logger.LoggerClass;
 import com.example.northwindserver.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ public class OrderContoller {
     public String getAllOrders(Model model) {
         List<Order> result = repo.findAll();
         model.addAttribute("orders", result);
+        LoggerClass.logTrace("Call endpoint: show all orders");
         return "ordersPage";
     }
 
@@ -30,6 +32,7 @@ public class OrderContoller {
     public String editOrder(@PathVariable int id,Model model){
         Order orderToEdit = repo.getReferenceById(id);
         model.addAttribute("orderToEdit",orderToEdit);
+        LoggerClass.logTrace("Call endpoint: edit order");
         return "orderEditForm";
 
     }

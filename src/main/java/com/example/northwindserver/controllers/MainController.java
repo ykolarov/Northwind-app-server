@@ -1,5 +1,6 @@
 package com.example.northwindserver.controllers;
 
+import com.example.northwindserver.logger.LoggerClass;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -18,6 +19,7 @@ public class MainController {
     /* START OF SECURITY ---- */
     @GetMapping("/login")
     public String loginForm(){
+        LoggerClass.logTrace("Call endpoint: login in");
         return "login";
     }
 
