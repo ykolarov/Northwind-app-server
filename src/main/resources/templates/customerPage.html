@@ -6,7 +6,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>Product details</title>
+    <title>Orders</title>
 </head>
 <body>
 <!--Nav Bar -->
@@ -27,48 +27,54 @@
             <li class="nav-item">
                 <a class="nav-link active" th:href="@{/logout}">Logout</a>
             </li>
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="log out"/>
-            </form>
         </ul>
     </div>
 <hr>
 <!--Heading & button -->
-    <div class="container">
-        <h1>Basket details </h1>
-
-    </div>
+<div class="container">
+    <h1>Customer  </h1>
+    <a th:href="@{/customer/add}" class="btn btn-primary mb-4"  > Add new Customer </a>
+</div>
 <!--Table -->
     <div class="container">
 
-
-
-                <table class="table table-bordered table-striped table-dark" id="basket-table">
+                <table class="table table-bordered table-striped table-dark" id="customer-table">
                 <thead>
                 <tr>
-
-
-                    <th>Product Name </th>
-                    <th>Unit Price </th>
+                    <th>Customer ID</th>
+                    <th>Company Name </th>
+                    <th>Contact Name</th>
+                    <th>Contact Title</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Phone</th>
                     <th>Actions </th>
                 </tr>
                 </thead>
-                <tr th:each="product,iterStat:${basket}">
-
-                    <td th:text="${product.productName}"></td>
-                    <td th:text="${product.unitPrice}"></td>
+                <tr th:each="customer:${customers}">
+                    <td th:text="${customer.id}"></td>
+                    <td th:text="${customer.companyName}"></td>
+                    <td th:text="${customer.contactName}"></td>
+                    <td th:text="${customer.contactTitle}"></td>
+                    <td th:text="${customer.address}"></td>
+                    <td th:text="${customer.city}"></td>
+                    <td th:text="${customer.country}"></td>
+                    <td th:text="${customer.phone}"></td>
                     <td>
+                        <a th:href="@{'/customer/edit/' + ${customer.id}}" class="btn btn-success mr-4 " >Update</a>
 
-                        <!--delete to delete from basket, below need to be modify -->
-                        <a th:href="@{'/basket/delete/' + ${iterStat.index}}" class="btn btn-danger mr-4"  >Remove from Basket</a>
+                        <a th:href="@{'/customer/delete/' + ${customer.id}}" class="btn btn-danger mr-4"  >Delete</a>
+                        <!--To be implemented -->
+                     <!--   <a th:href="@{'/order/details/' + ${order.id}}" class="btn btn-info mr-4 " >See More Details</a>-->
 
                     </td>
                 </tr>
 
                 </table>
-                <input type="submit" value="Complete Order" th:action="@{/product/submitOrder}" th:object="${basket}" th:method="POST" >
-        </div>
 
+
+        </div>
 <hr>
 <!--footer -->
     <footer>
@@ -82,18 +88,21 @@
         </div>
     </footer>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $("#basket-table").DataTable({
-                        'aoColumnDefs': [{
-                            'bSortable': false,
-                            'aTargets': [-1]
-                        }]
-                    })
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.12.1/datatables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#customer-table").DataTable({
+                    'aoColumnDefs': [{
+                        'bSortable': false,
+                        'aTargets': [-1]
+                    }]
                 })
+            })
 
-            </script>
+
+
+        </script>
+
 </body>
 </html>

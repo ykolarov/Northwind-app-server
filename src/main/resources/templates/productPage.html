@@ -21,6 +21,12 @@
             <li class="nav-item">
                 <a class="nav-link active" th:href="@{/basket/show/}">Basket</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" th:href="@{/customer/all/}">Customers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" th:href="@{/logout}">Logout</a>
+            </li>
             <form th:action="@{/logout}" method="post">
                 <input type="submit" value="log out"/>
             </form>
