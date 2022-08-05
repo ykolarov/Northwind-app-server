@@ -40,5 +40,4 @@ public class LoginPageTest {
                 .doesNotContain("Next")
                 .doesNotContain("Previous");
     }
-
 }

@@ -40,6 +40,4 @@ public class CustomerPageTest {
                 .contains("Show")
                 .contains("Search");
     }
-
-
 }

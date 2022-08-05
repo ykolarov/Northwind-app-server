@@ -40,5 +40,4 @@ public class ProductPageTest {
                 getForObject("http://localhost:" + 8080 + "/product/all", String.class))
                 .doesNotContain("Lorem ipsum dolor sit amet");
     }
-
 }

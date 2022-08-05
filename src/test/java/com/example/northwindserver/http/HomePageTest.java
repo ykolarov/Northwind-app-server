@@ -38,6 +38,4 @@ public class HomePageTest {
                 .doesNotContain("Next")
                 .doesNotContain("Previous");
     }
-
-
 }

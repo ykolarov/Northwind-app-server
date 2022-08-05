@@ -40,6 +40,4 @@ public class OrderPageTest {
                 .contains("Show")
                 .contains("Search");
     }
-
-
 }
